@@ -2,7 +2,7 @@ mod_proctitle.c - Apache proctitle module
 =================================================
 
 This module sets apache process titles to reflect the request currently processed, and some statistics so they will be visible 
-in top(1) or ps(1). Useful for debugging purposes. Very quickly and clearly.
+in *top* or *ps*. Useful for debugging purposes. Very quickly and clearly.
 
 Features
 --------
@@ -20,6 +20,7 @@ Now normally works on FreeBSD and Apache 2.4. Assembly was tested on Apache 2.2.
 For handlers displays the IP-address, the host and the query string. The main process collects query per second and bitrate statistics.
 In both cases, the parameter shows the listen queue lenght, which is important for problems investigation. Very quickly and clearly.
 
+* ProctitleIdent only for description on [M] and [C]
 * [M - master process.
 * [I - idle child process. Be careful, the value of his stats in the past.
 * [B - "busy" (in work) child process. Hot stats :)
@@ -36,10 +37,11 @@ Configuration
 
 To play with this sample module first compile it into a DSO file and install it into Apache's modules directory by running:
 
- $ apxs -c -i mod_proctitle.c
+> apxs -c -i mod_proctitle.c
 
 To enable mod_proctitle add this lines to working copy of httpd.conf:
 
+```
  LoadModule proctitle_module modules/mod_proctitle.so
  <IFModule proctitle_module>
      # Default: Off
@@ -47,25 +49,26 @@ To enable mod_proctitle add this lines to working copy of httpd.conf:
      # Default: ''
      ProctitleIdent pool01
  </IFmodule>
+```
 
 ProctitleIdent can to set from PROCTITLEIDENT enviroment variable
 
 Examples
 --------
 
-# ps -aux | grep httpd
-root     78931  0.0  0.5 182576 17180  ??  Ss    5:33PM   0:02.04 httpd: [M   lq: 0|0,  qps: 12,  rate: 2371 Kbps]   pool1 (httpd)
-charlie       47390  0.0  0.7 192384 22288  ??  I    12:00AM   0:00.30 httpd: [I lq: 0|0] [188.242.150.18] example.com GET /admin/users/ HTTP/1.0 (httpd)
-charlie       47391  0.0  0.7 192384 22252  ??  I    12:00AM   0:00.16 httpd: [I lq: 0|0] [217.70.31.114] example.net GET / HTTP/1.1 (httpd)
-charlie       47392  0.0  0.7 192384 22368  ??  I    12:00AM   0:00.38 httpd: [I lq: 0|0] [188.242.150.18] example.com GET /admin/edit/92 HTTP/1.0 (httpd)
-
+> $ ps -aux | grep httpd
+> root     78931  0.0  0.5 182576 17180  ??  Ss    5:33PM   0:02.04 httpd: [M   lq: 0|0,  qps: 12,  rate: 2371 Kbps]   pool1 (httpd)
+> charlie       47390  0.0  0.7 192384 22288  ??  I    12:00AM   0:00.30 httpd: [I lq: 0|0] [188.242.150.18] example.com GET /admin/users/ HTTP/1.0 (httpd)
+> charlie       47391  0.0  0.7 192384 22252  ??  I    12:00AM   0:00.16 httpd: [I lq: 0|0] [217.70.31.114] example.net GET / HTTP/1.1 (httpd)
+> charlie       47392  0.0  0.7 192384 22368  ??  I    12:00AM   0:00.38 httpd: [I lq: 0|0] [188.242.150.18] example.com GET /admin/edit/92 HTTP/1.0 (httpd)
 
 Donate
 ------
 
-For Nuts, please.
-PayPal: schors@gmail.com
-Yandex.Money: 41001140237324
+**For Nuts, please.**
+
+* **PayPal**: schors@gmail.com
+* **Yandex.Money**: 41001140237324
 
 TODO
 ----
