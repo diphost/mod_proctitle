@@ -79,3 +79,9 @@ TODO
 The Important point - to substitute the progname. FreeBSD set it by default. Most rc.d system based on true progname in title.
 
 2. Linux implementation to obtain the values of the listen queue length. I need to study netlink(7) and the basics of working with netlink.
+
+Applied
+-------
+
+Used and tested on the resources of DreamLess Systems (http://diphost.ru/)
+
