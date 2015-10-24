@@ -78,5 +78,5 @@ Applied
 Used and tested on the resources of DiPHOST (http://diphost.ru/)
 
 --
-![LICENSE WTFPL](wtfpl-badge-1.png)
+[![LICENSE WTFPL](wtfpl-badge-1.png)](LICENSE)
 
