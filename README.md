@@ -41,7 +41,7 @@ To play with this sample module first compile it into a DSO file and install it 
 
 To enable mod_proctitle add this lines to working copy of httpd.conf:
 
-```
+```apache
  LoadModule proctitle_module modules/mod_proctitle.so
  <IFModule proctitle_module>
      # Default: Off
@@ -56,7 +56,7 @@ ProctitleIdent can to set from PROCTITLEIDENT enviroment variable
 Examples
 --------
 
-```
+```shell
 $ ps -ax -o user,pid,command | grep httpd
 root     78931  httpd: [M   lq: 0|0,  qps: 12,  rate: 2371 Kbps]   pool1 (httpd)
 charlie       47390  httpd: [I lq: 0|0] [188.242.150.18] example.com GET /users/ HTTP/1.0 (httpd)
