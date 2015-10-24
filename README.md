@@ -64,14 +64,6 @@ charlie       47391  httpd: [I lq: 0|0] [217.70.31.114] example.net GET / HTTP/1
 charlie       47392  httpd: [I lq: 0|0] [188.242.150.18] example.com GET /admin/ HTTP/1.0 (httpd)
 ```
 
-Donate
-------
-
-**For Nuts, please.**
-
-* **PayPal**: schors@gmail.com
-* **Yandex.Money**: 41001140237324
-
 TODO
 ----
 
@@ -83,5 +75,8 @@ The Important point - to substitute the progname. FreeBSD set it by default. Mos
 Applied
 -------
 
-Used and tested on the resources of DreamLess Systems (http://diphost.ru/)
+Used and tested on the resources of DiPHOST (http://diphost.ru/)
+
+--
+![LICENSE WTFPL](wtfpl-badge-1.png)
 
