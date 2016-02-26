@@ -94,7 +94,7 @@ static void setproctitle(const char *fmt,...) {
     va_start(va, fmt);
     vsnprintf(proctitle_buf,sizeof(proctitle_buf),fmt, va);
     va_end(va);
-    strncpy(ap_server_argv0,proctitle_buf,128)
+    strncpy(ap_server_argv0,proctitle_buf,128);
 }
 #endif
 
